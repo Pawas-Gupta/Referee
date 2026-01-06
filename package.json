@@ -1,0 +1,36 @@
+{
+  "name": "trade-off-referee",
+  "version": "1.0.0",
+  "description": "A decision-support tool that generates structured comparisons of multiple approaches using Groq API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "decision-support",
+    "groq",
+    "api",
+    "trade-offs",
+    "comparison"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "express-rate-limit": "^8.2.1",
+    "groq-sdk": "^0.37.0"
+  },
+  "devDependencies": {
+    "fast-check": "^3.23.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

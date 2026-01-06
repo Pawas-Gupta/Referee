@@ -1,0 +1,129 @@
+You are helping build the frontend UI for the project "Trade-Off Referee".
+
+Use the reference layout shown in the attached mockup image as a visual guide.
+Recreate the design as a modern, clean dashboard-style interface using:
+- React
+- Tailwind CSS
+- Component-based structure
+- Accessible, responsive layout
+
+Do NOT create placeholder UI unrelated to the project.
+Match layout sections from the image as closely as possible.
+
+--------------------------------------
+PROJECT CONTEXT & PURPOSE
+--------------------------------------
+The app allows a user to enter a project / idea decision question.
+The backend (Groq API) returns structured JSON containing:
+
+- Problem Summary
+- Primary Approach
+- Alternative Approach
+- Pros & Cons
+- Trade-Offs
+- When to Choose Each
+- Optional Hybrid Strategy
+- Final Recommendation
+
+The frontend must display these results in a structured, readable way
+like a comparison dashboard — NOT like a chat interface.
+
+--------------------------------------
+LAYOUT REQUIREMENTS
+--------------------------------------
+Follow this layout structure inspired by the image:
+
+LEFT PANEL (Sidebar)
+- App title + icon: "Trade-Off Referee"
+- Input box where the user types their question
+- "Compare Approaches" button
+- "Recent Questions" list (static for now)
+- "Hybrid Strategy" info card
+
+RIGHT PANEL (Main Content)
+1) Problem Summary card (full-width)
+2) Two-column comparison layout:
+   - Primary Approach card
+   - Alternative Approach card
+
+Each card must contain:
+- Title
+- Short description
+- Pros list (green check icons)
+- Cons list (red cross icons)
+- Trade-Offs box
+- "Choose This If" section (badge style bullets)
+
+A footer section should display:
+- Optional Hybrid Strategy
+- Final Recommendation highlight
+
+--------------------------------------
+FUNCTIONALITY REQUIREMENTS
+--------------------------------------
+The frontend must:
+
+- Provide a text input to submit a question
+- Send request to backend endpoint `/compare`
+- Receive JSON response
+- Render content dynamically into the UI structure
+- Show loading state while waiting
+- Handle error gracefully
+
+--------------------------------------
+DATA BINDING
+--------------------------------------
+Bind fields to JSON keys from the backend:
+
+problem_summary
+primary_approach.title
+primary_approach.description
+primary_approach.pros[]
+primary_approach.cons[]
+primary_approach.tradeoffs
+alternative_approach.title
+alternative_approach.description
+alternative_approach.pros[]
+alternative_approach.cons[]
+alternative_approach.tradeoffs
+when_to_choose.choose_primary_if[]
+when_to_choose.choose_alternative_if[]
+optional_hybrid_strategy
+final_recommendation
+
+--------------------------------------
+DESIGN GUIDELINES
+--------------------------------------
+- Keep UI clean and professional
+- Use Tailwind utility classes
+- Use soft card backgrounds and subtle shadows
+- Use icons for pros and cons
+- Support responsive layout (desktop first)
+- Two-column comparison on desktop
+- Single column layout on mobile
+
+--------------------------------------
+FILE STRUCTURE
+--------------------------------------
+Create a modular component structure:
+
+/src/components
+- Sidebar.jsx
+- QuestionInput.jsx
+- ComparisonPanel.jsx
+- ApproachCard.jsx
+- ProsConsList.jsx
+- TradeoffsBox.jsx
+- RecommendationFooter.jsx
+
+--------------------------------------
+OUTPUT EXPECTATION
+--------------------------------------
+Generate:
+- React components
+- Tailwind class usage
+- A working sample page that can be plugged into the project
+- No dummy lorem text — use meaningful placeholders
+
+Start by creating the main page and core components,
+then wire them to accept JSON props for rendering.
